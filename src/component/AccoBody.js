@@ -3,28 +3,46 @@ import FoodItem from "./FoodItem";
 import foodJpg from "../images/food.jpg";
 import heartJpg from "../images/icons8-heart-50.png";
 class AccoBody extends Component {
+
+
   render() {
-    function Show() {
-      console.log("Test");
-    }
+  
     return (
       <>
         <div
           id="body"
-          style={{
-            
-            display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center",
-            flexWrap: "wrap",
-            gap: "20px",
-            maxHeight: "0px",
-            overflow: "hidden",
-            transition: "all 300ms",
-            boxSizing:'border-box',
-                        overflow:"hidden",
-                       
-          }}
+          style={
+            this.props.toggle 
+              ?  {
+                display: "flex",
+                justifyContent: "space-around",
+                alignItems: "center",
+                flexWrap: "wrap",
+                gap: "20px",
+                overflow: "hidden",
+                transition: "all 300ms",
+                boxSizing: "border-box",
+
+                
+                  maxHeight: "800px",
+                  padding: "20px 10px",
+                  border: "1px solid black",
+                }:{
+                  display: "flex",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                  gap: "20px",
+                  overflow: "hidden",
+                  transition: "all 300ms",
+                  boxSizing: "border-box",
+
+                  maxHeight: "0px",
+                  padding: "0px",
+                  border: "none"
+                }
+              
+          }
         >
           <FoodItem
             img={foodJpg}
